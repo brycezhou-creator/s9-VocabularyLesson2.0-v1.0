@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Badge from '../../../shared/components/ui/Badge';
-import { RotateCcw, Sparkles, Trophy } from 'lucide-react';
+import { RotateCcw, Sparkles, Trophy, TrendingUp } from 'lucide-react';
 import './ExtraModules.css';
 
 /**
@@ -26,7 +26,7 @@ const ExtraModules = () => {
       icon: <RotateCcw size={20} />,
       iconColor: '#3B82F6', // blue
       route: '/smart-review',
-      badge: { variant: 'blue', text: 'Coming Soon' },
+      badge: { variant: 'blue', text: '已上线' },
     },
     {
       id: 'ai-context',
@@ -36,7 +36,7 @@ const ExtraModules = () => {
       icon: <Sparkles size={20} />,
       iconColor: '#FBBF24', // yellow
       route: '/ai-context',
-      badge: { variant: 'yellow', text: 'Coming Soon' },
+      badge: { variant: 'yellow', text: '已上线' },
     },
     {
       id: 'milestone',
@@ -46,7 +46,17 @@ const ExtraModules = () => {
       icon: <Trophy size={20} />,
       iconColor: '#10B981', // green
       route: '/milestone',
-      badge: { variant: 'green', text: 'Coming Soon' },
+      badge: { variant: 'green', text: '已上线' },
+    },
+    {
+      id: 'learning-report',
+      title: '学习报告',
+      subtitle: '数据统计',
+      description: '查看学习数据和成就',
+      icon: <TrendingUp size={20} />,
+      iconColor: '#10B981', // green
+      route: '/learning-report',
+      badge: { variant: 'green', text: '已上线' },
     },
   ];
 

@@ -1,15 +1,14 @@
 /* ================================
    Milestone Exam - 里程碑大考（Phase 6）
-   【负责人：同事】
    ================================ */
 
 .milestone-exam {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
   padding: var(--spacing-6);
 }
 
-.milestone-exam__header {
+.exam-header {
   max-width: 1200px;
   margin: 0 auto var(--spacing-8);
   display: flex;
@@ -17,103 +16,699 @@
   gap: var(--spacing-4);
 }
 
-.milestone-exam__back-btn {
+.exam-back-btn {
   flex-shrink: 0;
 }
 
-.milestone-exam__header-info {
+.exam-header-info {
   display: flex;
   align-items: center;
   gap: var(--spacing-4);
 }
 
-.milestone-exam__icon {
+.exam-icon {
   width: 64px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(16, 185, 129, 0.2);
+  background: rgba(251, 191, 36, 0.2);
   border-radius: var(--radius-lg);
-  color: var(--color-green);
+  color: #FCD34D;
 }
 
-.milestone-exam__title {
+.exam-icon--green {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22C55E;
+}
+
+.exam-icon--red {
+  background: rgba(239, 68, 68, 0.2);
+  color: #EF4444;
+}
+
+.exam-title {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   color: #fff;
   margin: 0 0 var(--spacing-2) 0;
 }
 
-.milestone-exam__container {
-  max-width: 1200px;
+.exam-container {
+  max-width: 900px;
   margin: 0 auto;
-}
-
-/* Placeholder Content */
-.milestone-exam__placeholder {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--spacing-10) var(--spacing-6);
+  gap: var(--spacing-4);
 }
 
-.milestone-exam__placeholder-icon {
-  width: 120px;
-  height: 120px;
+/* ========== 考试说明 ========== */
+.exam-guide {
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guide-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: rgba(16, 185, 129, 0.1);
-  border-radius: 50%;
-  color: var(--color-green);
-  margin-bottom: var(--spacing-6);
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+  color: #FCD34D;
 }
 
-.milestone-exam__placeholder-title {
+.guide-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: #fff;
+  margin: 0;
+}
+
+.guide-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.guide-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-sm);
+}
+
+/* ========== 考试卡片 ========== */
+.exam-card {
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.exam-question {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.exam-context {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   color: #fff;
-  margin: 0 0 var(--spacing-4) 0;
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-6) 0;
+  padding: var(--spacing-6);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-md);
+  border-left: 4px solid #FCD34D;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  letter-spacing: normal;
+  font-family: 'Courier New', monospace;
 }
 
-.milestone-exam__placeholder-desc {
+/* 空格区域 */
+.exam-blanks {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.exam-blank-item {
+  display: inline-block;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  border-bottom: 3px solid #fff;
+  min-width: 30px;
+  text-align: center;
+}
+
+.exam-blank-space {
+  display: none;
+}
+
+.exam-hints {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  align-items: center;
+}
+
+.exam-hint {
+  color: #FCD34D;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+}
+
+/* ========== 输入区域 ========== */
+.exam-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.exam-input {
+  width: 100%;
+  padding: var(--spacing-4);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.exam-input:focus {
+  outline: none;
+  border-color: #FCD34D;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+}
+
+.exam-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.exam-submit-btn {
+  align-self: center;
+  min-width: 200px;
+}
+
+/* ========== 反馈状态 ========== */
+.exam-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-6);
+  text-align: center;
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.exam-feedback--success {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.exam-feedback--success svg {
+  color: #22C55E;
+}
+
+.exam-feedback h3 {
+  font-size: var(--font-size-xl);
+  color: #22C55E;
+  margin: 0;
+}
+
+.exam-feedback p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* ========== 奖励界面 ========== */
+.exam-award {
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  text-align: center;
+}
+
+.award-animation {
+  margin-bottom: var(--spacing-8);
+}
+
+.award-medal {
+  margin: 0 auto var(--spacing-6);
+  animation: medalDrop 1s ease-out;
+}
+
+@keyframes medalDrop {
+  0% {
+    transform: translateY(-200px) rotate(-360deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20px) rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.award-medal-icon {
+  width: 120px;
+  height: 120px;
+  color: #FCD34D;
+  filter: drop-shadow(0 10px 30px rgba(251, 191, 36, 0.5));
+}
+
+.award-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: #FCD34D;
+  margin: 0 0 var(--spacing-3) 0;
+  text-shadow: 0 2px 10px rgba(251, 191, 36, 0.5);
+}
+
+.award-subtitle {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+.award-status {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.status-badge--green {
+  background: rgba(34, 197, 94, 0.2);
+  border: 2px solid #22C55E;
+  color: #86EFAC;
+}
+
+.status-badge--red {
+  background: rgba(239, 68, 68, 0.2);
+  border: 2px solid #EF4444;
+  color: #FCA5A5;
+}
+
+.status-light {
+  font-size: var(--font-size-xl);
+}
+
+.award-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-6);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  color: #86EFAC;
+  font-size: var(--font-size-base);
+}
+
+.detail-item svg {
+  color: #22C55E;
+}
+
+.award-btn {
+  min-width: 200px;
+  align-self: center;
+}
+
+/* ========== 失败界面 ========== */
+.exam-failed {
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  text-align: center;
+}
+
+.failed-icon {
+  color: #EF4444;
+  margin-bottom: var(--spacing-4);
+}
+
+.failed-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #FCA5A5;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.failed-subtitle {
   font-size: var(--font-size-lg);
   color: rgba(255, 255, 255, 0.7);
   margin: 0 0 var(--spacing-6) 0;
 }
 
-.milestone-exam__feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 var(--spacing-8) 0;
+.failed-details {
+  margin-bottom: var(--spacing-6);
+  padding: var(--spacing-6);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.failed-answer {
+  margin-bottom: var(--spacing-4);
+}
+
+.failed-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-size-sm);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.failed-word {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #FCD34D;
+  margin: 0;
+}
+
+.failed-context {
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.failed-sentence {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-style: italic;
+}
+
+.failed-status {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.failed-message {
+  padding: var(--spacing-4);
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-6);
+}
+
+.failed-message p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-base);
+}
+
+.failed-btn {
+  min-width: 200px;
+  align-self: center;
+}
+
+/* ========== 考试信息 ========== */
+.exam-info {
+  background: rgba(30, 41, 59, 0.6) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: #fff;
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+.info-items {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4);
-  align-items: flex-start;
-  text-align: left;
+  gap: var(--spacing-3);
 }
 
-.milestone-exam__feature-list li {
+.info-item {
   display: flex;
   align-items: center;
-  gap: var(--spacing-3);
-  font-size: var(--font-size-base);
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.milestone-exam__feature-list svg {
-  flex-shrink: 0;
-  color: var(--color-green);
-}
-
-.milestone-exam__placeholder-hint {
-  padding: var(--spacing-4) var(--spacing-6);
-  background: rgba(251, 191, 36, 0.1);
-  border: 1px solid rgba(251, 191, 36, 0.3);
-  border-radius: var(--radius-md);
-  color: #FCD34D;
+  gap: var(--spacing-2);
   font-size: var(--font-size-sm);
 }
 
+.info-item--green {
+  color: #86EFAC;
+}
+
+.info-item--green svg {
+  color: #22C55E;
+}
+
+.info-item--red {
+  color: #FCA5A5;
+}
+
+.info-item--red svg {
+  color: #EF4444;
+}
+
+/* ========== 震动动画 ========== */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+/* ========== 准备页面 ========== */
+.exam-preparation {
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.preparation-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.preparation-icon {
+  color: #FCD34D;
+  margin-bottom: var(--spacing-4);
+  filter: drop-shadow(0 4px 12px rgba(251, 191, 36, 0.4));
+}
+
+.preparation-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #FCD34D;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.preparation-subtitle {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.preparation-progress {
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-6);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.preparation-section-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: #fff;
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+.preparation-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-4);
+}
+
+.preparation-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-4);
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: var(--radius-md);
+}
+
+.preparation-stat-icon {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-2);
+}
+
+.preparation-stat-number {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #FCD34D;
+  margin-bottom: var(--spacing-1);
+}
+
+.preparation-stat-label {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.preparation-rules {
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-6);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+}
+
+.preparation-rule-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.preparation-rule-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-sm);
+}
+
+.preparation-rule-item svg {
+  color: #FCD34D;
+  flex-shrink: 0;
+}
+
+.preparation-outcome {
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-6);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.preparation-outcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.preparation-outcome-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  border: 2px solid;
+}
+
+.preparation-outcome-item--success {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.preparation-outcome-item--success svg {
+  color: #22C55E;
+  flex-shrink: 0;
+}
+
+.preparation-outcome-item--fail {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.preparation-outcome-item--fail svg {
+  color: #EF4444;
+  flex-shrink: 0;
+}
+
+.preparation-outcome-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: #fff;
+  margin: 0 0 var(--spacing-1) 0;
+}
+
+.preparation-outcome-desc {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.preparation-encouragement {
+  text-align: center;
+  padding: var(--spacing-6);
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-6);
+}
+
+.preparation-encouragement p {
+  margin: 0 0 var(--spacing-2) 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+.preparation-encouragement p:last-child {
+  margin-bottom: 0;
+}
+
+.preparation-start-btn {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* ========== 加载状态 ========== */
+.exam-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+  font-size: var(--font-size-xl);
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 768px) {
+  .milestone-exam {
+    padding: var(--spacing-4);
+  }
+  
+  .exam-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .exam-context {
+    font-size: var(--font-size-xl);
+    padding: var(--spacing-4);
+  }
+  
+  .exam-input {
+    font-size: var(--font-size-xl);
+  }
+  
+  .award-medal-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .award-title {
+    font-size: var(--font-size-3xl);
+  }
+}

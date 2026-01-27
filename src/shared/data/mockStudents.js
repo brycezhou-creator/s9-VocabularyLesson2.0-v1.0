@@ -74,6 +74,102 @@ export const MOCK_STUDENTS = [
           phase4: { inProgress: true }
         }
       },
+      {
+        wordId: 3,  // create
+        status: 'yellow',
+        reviewCount: 1,
+        lastReviewTime: '2026-01-23T11:00:00Z',
+        nextReviewTime: '2026-01-26T11:00:00Z',
+        errorCount: 0,
+        errorPatterns: [],
+        phase: 4,
+        phaseHistory: {
+          phase1: { passed: true, time: '2026-01-23T11:00:00Z' },
+          phase2: { passed: true, time: '2026-01-23T11:10:00Z', attempts: 1 },
+          phase3: { passed: true, time: '2026-01-23T11:20:00Z' },
+          phase4: { inProgress: true }
+        }
+      },
+      {
+        wordId: 9,  // imagine
+        status: 'yellow',
+        reviewCount: 2,
+        lastReviewTime: '2026-01-20T15:00:00Z',
+        nextReviewTime: '2026-01-27T15:00:00Z',
+        errorCount: 0,
+        errorPatterns: [],
+        phase: 4,
+        phaseHistory: {
+          phase1: { passed: false, time: '2026-01-20T15:00:00Z' },
+          phase2: { passed: true, time: '2026-01-20T15:10:00Z', attempts: 2 },
+          phase3: { passed: true, time: '2026-01-20T15:25:00Z' },
+          phase4: { inProgress: true }
+        }
+      },
+      {
+        wordId: 10,  // journey
+        status: 'yellow',
+        reviewCount: 1,
+        lastReviewTime: '2026-01-22T12:00:00Z',
+        nextReviewTime: '2026-01-25T12:00:00Z',
+        errorCount: 0,
+        errorPatterns: [],
+        phase: 4,
+        phaseHistory: {
+          phase1: { passed: true, time: '2026-01-22T12:00:00Z' },
+          phase2: { passed: true, time: '2026-01-22T12:10:00Z', attempts: 1 },
+          phase3: { passed: true, time: '2026-01-22T12:20:00Z' },
+          phase4: { inProgress: true }
+        }
+      },
+      {
+        wordId: 11,  // knowledge
+        status: 'yellow',
+        reviewCount: 2,
+        lastReviewTime: '2026-01-19T14:00:00Z',
+        nextReviewTime: '2026-01-26T14:00:00Z',
+        errorCount: 0,
+        errorPatterns: [],
+        phase: 4,
+        phaseHistory: {
+          phase1: { passed: true, time: '2026-01-19T14:00:00Z' },
+          phase2: { passed: true, time: '2026-01-19T14:10:00Z', attempts: 1 },
+          phase3: { passed: true, time: '2026-01-19T14:20:00Z' },
+          phase4: { inProgress: true }
+        }
+      },
+      {
+        wordId: 13,  // modern
+        status: 'yellow',
+        reviewCount: 1,
+        lastReviewTime: '2026-01-24T10:00:00Z',
+        nextReviewTime: '2026-01-27T10:00:00Z',
+        errorCount: 0,
+        errorPatterns: [],
+        phase: 4,
+        phaseHistory: {
+          phase1: { passed: false, time: '2026-01-24T10:00:00Z' },
+          phase2: { passed: true, time: '2026-01-24T10:10:00Z', attempts: 3 },
+          phase3: { passed: true, time: '2026-01-24T10:30:00Z' },
+          phase4: { inProgress: true }
+        }
+      },
+      {
+        wordId: 15,  // perfect
+        status: 'yellow',
+        reviewCount: 3,
+        lastReviewTime: '2026-01-17T16:00:00Z',
+        nextReviewTime: '2026-01-24T16:00:00Z',
+        errorCount: 0,
+        errorPatterns: [],
+        phase: 4,
+        phaseHistory: {
+          phase1: { passed: true, time: '2026-01-17T16:00:00Z' },
+          phase2: { passed: true, time: '2026-01-17T16:10:00Z', attempts: 1 },
+          phase3: { passed: true, time: '2026-01-17T16:20:00Z' },
+          phase4: { inProgress: true }
+        }
+      },
       
       // Red状态单词（待修补）
       {
@@ -189,12 +285,12 @@ export const MOCK_STUDENTS = [
     
     // 统计数据
     stats: {
-      totalWords: 9,
+      totalWords: 16,
       redWords: 1,
-      yellowWords: 3,
+      yellowWords: 10,
       greenWords: 5,
-      redWordRate: 0.11,  // 11%
-      reviewBacklog: 4,  // yellow + red
+      redWordRate: 0.06,  // 6%
+      reviewBacklog: 11,  // yellow + red
       averageAccuracy: 0.85,
       totalStudyTime: 1800  // 秒
     }

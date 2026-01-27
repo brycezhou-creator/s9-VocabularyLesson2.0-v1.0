@@ -1,0 +1,123 @@
+/* ================================
+   Confirm Dialog - 确认对话框
+   ================================ */
+
+.confirm-dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.confirm-dialog {
+  position: relative;
+  width: 90%;
+  max-width: 450px;
+  padding: var(--spacing-8);
+  background: rgba(30, 41, 59, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.confirm-dialog__close {
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.confirm-dialog__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.confirm-dialog__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-4);
+  border-radius: var(--radius-full);
+}
+
+.confirm-dialog__icon--warning {
+  background: rgba(251, 191, 36, 0.2);
+  color: #FCD34D;
+}
+
+.confirm-dialog__icon--danger {
+  background: rgba(239, 68, 68, 0.2);
+  color: #EF4444;
+}
+
+.confirm-dialog__icon--info {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3B82F6;
+}
+
+.confirm-dialog__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: #fff;
+  text-align: center;
+  margin: 0 0 var(--spacing-3) 0;
+}
+
+.confirm-dialog__message {
+  font-size: var(--font-size-base);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-8) 0;
+}
+
+.confirm-dialog__actions {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.confirm-dialog__cancel,
+.confirm-dialog__confirm {
+  flex: 1;
+}

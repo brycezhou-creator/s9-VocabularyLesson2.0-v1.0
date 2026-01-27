@@ -8,13 +8,20 @@ import ViewSwitcher from './shared/components/ui/ViewSwitcher';
 import SmartReview from './apps/demo/pages/SmartReview';
 import AIContext from './apps/demo/pages/AIContext';
 import MilestoneExam from './apps/demo/pages/MilestoneExam';
+// 增值服务 - AI语境闭环
+import StoryReading from './apps/demo/pages/StoryReading';
+import ClozePractice from './apps/demo/pages/ClozePractice';
+import LearningReport from './apps/demo/pages/LearningReport';
 
 function App() {
   const location = useLocation();
   const showViewSwitcher = location.pathname !== '/' && 
                            !location.pathname.startsWith('/smart-review') &&
                            !location.pathname.startsWith('/ai-context') &&
-                           !location.pathname.startsWith('/milestone');
+                           !location.pathname.startsWith('/milestone') &&
+                           !location.pathname.startsWith('/story-reading') &&
+                           !location.pathname.startsWith('/cloze-practice') &&
+                           !location.pathname.startsWith('/learning-report');
 
   return (
     <>
@@ -31,6 +38,13 @@ function App() {
         <Route path="/smart-review" element={<SmartReview />} />
         <Route path="/ai-context" element={<AIContext />} />
         <Route path="/milestone" element={<MilestoneExam />} />
+        
+        {/* 增值服务 - AI语境闭环 */}
+        <Route path="/story-reading" element={<StoryReading />} />
+        <Route path="/cloze-practice" element={<ClozePractice />} />
+        
+        {/* 学习报告 */}
+        <Route path="/learning-report" element={<LearningReport />} />
       </Routes>
       {showViewSwitcher && <ViewSwitcher />}
     </>

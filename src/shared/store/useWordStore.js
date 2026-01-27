@@ -190,6 +190,20 @@ const useWordStore = create((set, get) => ({
   },
   
   /**
+   * 大考通过 → Green（别名：promoteToGreen）
+   */
+  promoteToGreen: (wordId) => {
+    get().transitionToGreen(wordId);
+  },
+  
+  /**
+   * 大考失败 → Red（别名：demoteToRed）
+   */
+  demoteToRed: (wordId) => {
+    get().transitionToRed(wordId, [{ type: 'exam', value: 'milestone_failed' }]);
+  },
+  
+  /**
    * 复习达标（5次+30天）→ Green
    */
   transitionToGreen: (wordId) => {
@@ -275,6 +289,20 @@ const useWordStore = create((set, get) => ({
     
     get().updateWordState(wordId, newState);
     get().updateLists();
+  },
+  
+  /**
+   * Phase 6大考通过 → Green（绿灯，永久出库）
+   */
+  promoteToGreen: (wordId) => {
+    get().transitionToGreen(wordId);
+  },
+  
+  /**
+   * Phase 6大考失败 → Red（红灯，踢回P5）
+   */
+  demoteToRed: (wordId) => {
+    get().transitionToRed(wordId, [{ type: 'milestone_exam_failed', time: new Date().toISOString() }]);
   },
   
   // ========== 内部辅助方法 ==========

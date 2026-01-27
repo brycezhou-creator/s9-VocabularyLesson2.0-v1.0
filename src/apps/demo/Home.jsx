@@ -5,6 +5,7 @@ import Badge from '../../shared/components/ui/Badge';
 import ModelCards from './components/ModelCards';
 import ExtraModules from './components/ExtraModules';
 import ViewSelector from './components/ViewSelector';
+import TodayTasks from './components/TodayTasks';
 import { Play } from 'lucide-react';
 import './Home.css';
 
@@ -60,6 +61,9 @@ const Home = () => {
             双端实时互动 · 六维数据驱动 · 精准分层训练
           </p>
         </header>
+
+        {/* 今日待办 - 智能推荐 */}
+        <TodayTasks />
 
         {/* Model A/B 课程模式卡片 - 你的专属区域 */}
         <ModelCards 
